@@ -1,0 +1,84 @@
+Given a natural number N, write a program to print True if it’s a smith number, False otherwise.
+A number whose sum of digits and sum of digits of its prime factorization are same is a Smith number.
+Constraint:
+0<N<2147483647
+Input and output format:
+Read N from the standard input stream and print the output to the standard output stream.
+Sample Input	Sample Output	Explanation
+58	True	Prime factorization of 58 is 2,29 Sum of digits of 58 is 13 and sum of digits of prime factorization is also 13. Hence 58 is a Smith number.
+4	True	Prime factorization of 4 is 2, 2. Sum of the digits is 4 and sum of the digits of the prime factorization is also 4. Hence 4 is a Smith Number
+
+Answer(70%)
+#for input use:
+def sumOfDigits(n):
+    sum1=0
+    while(n!=0):
+        div=n//10
+        temp=n%10
+        sum1+=temp
+        n=div
+    return (sum1)
+def primecheck(a):
+  for i in range(2,a//2+1):
+    if(a%i==0):
+      return False
+  return True
+list1=[]
+ipStr = int(raw_input())
+for i in range(2,ipStr+1):
+  if(ipStr%i==0):
+    list1.append(i)
+list2=[]
+for i in range(0,len(list1)):
+  res=primecheck(list1[i])
+  if(res==True):
+    list2.append(list1[i])
+sum2=0
+for i in range(0,len(list2)):
+  sum2+=sumOfDigits(list2[i])
+sum1=sumOfDigits(ipStr)
+if(sum1==sum2):
+  print(True)
+else:
+  print(False)
+  
+
+
+
+Answer(80%)
+
+#for input use:
+def sumOfDigits(n):
+    sum1=0
+    while(n!=0):
+        div=n//10
+        temp=n%10
+        sum1+=temp
+        n=div
+    return (sum1)
+def primecheck(a):
+  for i in range(2,a//2+1):
+    if(a%i==0):
+      return False
+  return True
+list1=[]
+ipStr = int(raw_input())
+for i in range(2,ipStr+1):
+  if(ipStr%i==0):
+    list1.append(i)
+list2=[]
+for i in range(0,len(list1)):
+  res=primecheck(list1[i])
+  if(res==True):
+    list2.append(list1[i])
+sum2=0
+for i in range(0,len(list2)):
+  sum2+=sumOfDigits(list2[i])
+  p=list2[i]*list2[i]
+  if(ipStr%p==0):
+    sum2+=list2[i]
+sum1=sumOfDigits(ipStr)
+if(sum1==sum2):
+  print(True)
+else:
+  print(False)
