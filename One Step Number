@@ -1,0 +1,39 @@
+Write a program to print a list of one-step numbers present in the given range [S,E] (including S and E). A number is said to be a one-step number if the absolute difference between its consecutive digits is 1. Print -1 if no such numbers are present in the given range.
+Input format:
+The first line gives the first number S in the range.
+The second line gives the last number E in the range.
+Read the input from the standard input.
+Constraints:
+9<S<E<100000
+Output format:
+Print the one-step numbers in ascending order, each number separated by a comma.
+Print -1 if no such numbers are present. Print the output to the standard output.
+Sample Input	Sample Output	Explanation
+101
+200	101,121,123	The first number in the range i.e 101 is a one-step number as the absolute difference between consecutive digits i.e. 1 - 0, 0 - 1 is 1.However, the next number 102 is not a one-step number because 1 - 0 is although 1 but 0 - 2 is 2. On a similar basis numbers 121 and 123 are one-step numbers and the rest are not in the given range.
+10
+20	10,12	
+124
+200	-1	
+
+Answer:(80%)
+#for input use:
+a = int(raw_input())
+b = int(raw_input())
+list1=[]
+for i in range(a,b):
+  s1=str(i)
+  cnt=1
+  for j in range(0,len(s1)-1):
+    if(  abs(int(s1[j])- int(s1[j+1]))==1  ):
+      cnt+=1
+  if(cnt==len(s1)):
+    list1.append(s1)
+if(len(list1)==0):
+  print (-1)
+else:
+  str1=""
+  for i in range(0,len(list1)):
+    str1+=list1[i]
+    str1+=","
+  print(str1[:-1])
