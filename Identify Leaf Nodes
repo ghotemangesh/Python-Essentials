@@ -1,0 +1,11 @@
+Problem Statement:
+Given a set of positive numbers, write a program to build a Binary Search Tree (BST) and return the leaf node(s).
+Traverse the right sub-tree first and then the left while identifying the leaf nodes.
+A Binary Search Tree (BST) is a tree in which the left sub-tree of a node has a value less than its parent node's value
+and the right sub-tree of a node has a value greater than or equal to, its parent node's value.
+
+Input Format
+First line contains the number of nodes. Second line contains the list of numbers separated by a space.
+Read the input from the standard input stream.
+Output Format
+Print the value of leaf node(s) in a separate line to the standard output stream. Print -1 if no tree can be formed.
