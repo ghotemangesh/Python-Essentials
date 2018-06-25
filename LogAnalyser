@@ -1,0 +1,23 @@
+Problem Statement:
+Given an application log, write a program to find customers who faced login denied issue consecutively for 3-days.
+
+Log statement format:
+<yyyy-mm-dd|hh:mm:ss> <Log Level> <Customer email> <Error Code> "<Error Message>"
+
+The log for the access denied issue has a Log Level of ERROR and the Error Message contains the tag: 'SERVICE LOGIN'.
+
+Sample error log:
+2018-04-03|22:34:32 ERROR thompson_ret@infosystems.uk 020 "SERVICE LOGIN-customer login failed due to InfoServicePortalDB failure"
+
+Sample success log:
+2018-04-03|23:20:03 INFO thompson_ret@infosystems.uk 001 "SERVICE LOGIN-logged in successfully to dashboard"
+
+Input format:
+
+First line contains the number of log entries N and the next N lines contain the log statements. Read the input from the standard input stream. 
+
+Output format:
+
+Print the emailIDs without @domainname (i.e, username) in alphabetical order separated by comma to the standard output stream
+
+Answer:
