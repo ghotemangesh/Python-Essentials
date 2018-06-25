@@ -1,0 +1,33 @@
+Given an array of L integers and a number N, write a program to check whether the array is beautiful or not.
+An array is said to be beautiful if it satisfies the following conditions:
+All elements of array must lie between 1 and N (inclusive of 1 and N).
+Array must be unordered
+The array elements are unique.
+Print True if array is beautiful, False otherwise..
+Input Format
+First line of input contains N.
+Second line of input contains L.
+Third line of input contains L elements of array separated by spaces. Read the input from standard input.
+Constraints
+0 < N < 10000.
+0 < L < 10000.
+Output Format
+Print True, if array is beautiful, False otherwise. Print the output to standard output
+
+
+Answer:
+limit = int(raw_input())
+arrsize= int(raw_input())
+list1=list(map(int,raw_input().split()))
+#All elements of array must lie between 1 and N (inclusive of 1 and N).
+#Array must be unordered
+#The array elements are unique.
+chk=0
+for i in range(0,len(list1)):
+  if(1<=list1[i]<=limit):
+    chk+=1
+list2=list(set(list1))
+if( list1==list2 or chk!=len(list1) or len(list1)!=len(list2) ):
+  print("False")
+else:
+  print("True")
