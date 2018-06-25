@@ -1,0 +1,30 @@
+Question:
+Given a list of strings, each string containing the ticket information of passengers, write a program to print the ticket ID of all the passengers.
+Input Format:
+Ticket information of all the passengers are given in a single line, comma-separated. Ticket information of a passenger will be in the below format:
+<source>:<destination>:<mobile number>
+Read the input from the standard input.
+Output format:
+Print the comma-separated ticket IDs of all the passenger to the standard output. 
+Ticket ID follows the below format:
+<first two characters of source><last two characters of destination><sum of the numbers present in even indices (including 0) 
+of the mobile number><sequence number of the passenger in the input list starting with 1>
+
+Answer:(100%)
+a=list(raw_input().split(","))
+list2=[]
+for i in range(0,len(a)):
+  str1=""
+  a1=a[i].split(":")
+  str1+=a1[0][:2]
+  str1+=a1[1][-2::1]
+  sum1=0
+  for s1 in range(0,len(a1[2]),2):
+      sum1+=int(a1[2][s1]) 
+  str1+=str(sum1)
+  str1+=str(i+1)
+  list2.append(str1)
+s1=""
+for k in range(0,len(list2)):
+  s1+=(''.join(list2[k])+",")
+print(s1[:-1])
