@@ -1,0 +1,16 @@
+Problem Statement:
+
+Given a start time S and an end time E in 24 HR format (HH:MM), write a program to print the number of times the minute and the hour hand will be overlapping in between the given duration.
+Input format:
+The first line contains the start time in the format HH:MM
+The second line contains the end time in the format HH:MM
+Read the input from the standard input stream
+Output format:
+Print the output to the standard output stream
+Sample Input	Sample Output	Explanation
+00:00
+23:59	22	
+
+
+
+Answer:
